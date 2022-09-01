@@ -16,12 +16,12 @@ namespace Proyecto_Final.Resources.DAL
         {
             conexion = new CONEXIONBDD();
         }
-        public bool InicioSesion(LOGINBLL LoginBLL)
+        public DataSet InicioSesion(LOGINBLL LoginBLL)
         {
             SqlCommand SQLComado = new SqlCommand("SELECT * FROM USUARIO WHERE USUARIO = @USU AND CLAVE = @CLAVE");
             SQLComado.Parameters.Add("@USU", SqlDbType.VarChar).Value = LoginBLL.Usuario;
             SQLComado.Parameters.Add("@CLAVE", SqlDbType.VarChar).Value = LoginBLL.Clave;
-            return conexion.Ejecutarcomando(SQLComado);
+            return conexion.EjecutarSentecia(SQLComado);
         }
     }
 }

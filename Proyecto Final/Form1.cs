@@ -66,7 +66,18 @@ namespace Proyecto_Final
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Recuperarinfo();
-            LoginDAL.InicioSesion(Recuperarinfo());
+            DataSet datosinicio;
+            datosinicio = LoginDAL.InicioSesion(Recuperarinfo());
+            if (datosinicio != null)
+            {
+                MessageBox.Show("usuario o contraseña incorrectos");
+            }
+            else
+            {
+                Form1 frm = new Form1();
+                frm.Show();
+                Hide();
+            }
         }
     }
 }

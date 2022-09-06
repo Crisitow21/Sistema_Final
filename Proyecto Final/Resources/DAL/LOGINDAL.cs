@@ -16,7 +16,7 @@ namespace Proyecto_Final.Resources.DAL
         {
             conexion = new CONEXIONBDD();
         }
-        static string CadenaConexion = "Data Source=DESKTOP-O0AP5KU\\MSSQLSERVER01; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
+        static string CadenaConexion = "Data Source=ISP_LAB1_PC10; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
         SqlConnection Conexion = new SqlConnection(CadenaConexion);
         public int InicioSesion(string usuario, string clave)
         {

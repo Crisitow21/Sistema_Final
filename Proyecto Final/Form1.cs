@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Proyecto_Final.Resources.DAL;
 using Proyecto_Final.Resources.BLL;
+using Proyecto_Final.Resources.PL;
 
 namespace Proyecto_Final
 {
@@ -71,6 +72,9 @@ namespace Proyecto_Final
             if (LoginDAL.InicioSesion(textBox1.Text, textBox2.Text) == 1)
             {
                 MessageBox.Show("El usuario ha sido encontrado");
+                Resources.PL.Menu frm = new Resources.PL.Menu();
+                frm.Show();
+                Hide();
             }
             else
             {

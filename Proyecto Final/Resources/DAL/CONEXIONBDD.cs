@@ -10,7 +10,7 @@ namespace Proyecto_Final.Resources.DAL
 {
     class CONEXIONBDD
     {
-        public string CadenaConexion;
+        public string CadenaConexion = "Data Source=DESKTOP-O0AP5KU\\MSSQLSERVER01; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
         SqlConnection Conexion;
         public SqlConnection EstablecerConexion()
         {

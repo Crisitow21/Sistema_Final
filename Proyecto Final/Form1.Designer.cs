@@ -49,14 +49,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(270, 337);
+            this.textBox1.Location = new System.Drawing.Point(270, 290);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(243, 20);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(270, 286);
+            this.textBox2.Location = new System.Drawing.Point(270, 337);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(243, 20);
             this.textBox2.TabIndex = 1;
@@ -144,7 +144,7 @@
             this.Informacion});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(746, 25);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -186,7 +186,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(746, 446);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label5);

@@ -16,12 +16,17 @@ namespace Proyecto_Final.Resources.DAL
         {
             conexion = new CONEXIONBDD();
         }
-        public DataSet InicioSesion(LOGINBLL LoginBLL)
+        static string CadenaConexion = "Data Source=DESKTOP-O0AP5KU\\MSSQLSERVER01; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
+        SqlConnection Conexion = new SqlConnection(CadenaConexion);
+        public int InicioSesion(string usuario, string clave)
         {
-            SqlCommand SQLComado = new SqlCommand("SELECT * FROM USUARIO WHERE USUARIO = @USU AND CLAVE = @CLAVE");
-            SQLComado.Parameters.Add("@USU", SqlDbType.VarChar).Value = LoginBLL.Usuario;
-            SQLComado.Parameters.Add("@CLAVE", SqlDbType.VarChar).Value = LoginBLL.Clave;
-            return conexion.EjecutarSentecia(SQLComado);
+            int count;
+            Conexion.Open();
+            string sente = "SELECT Count(*) FROM USUARIO WHERE USUARIO = '" + usuario + "' AND CLAVE = '" + clave + "'";
+            SqlCommand cmd = new SqlCommand(sente, Conexion);
+            count = Convert.ToInt32(cmd.ExecuteScalar());
+            Conexion.Close(); 
+            return count;
         }
     }
 }

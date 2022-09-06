@@ -14,11 +14,12 @@ namespace Proyecto_Final
 {
     public partial class Form1 : Form
     {
-        LOGINDAL LoginDAL = new LOGINDAL();
+        LOGINDAL LoginDAL;
+
 
         public Form1()
         {
-            
+            LoginDAL = new LOGINDAL();
             InitializeComponent();
         }
 
@@ -37,7 +38,7 @@ namespace Proyecto_Final
         {
             timer1.Enabled = true;
             CONEXIONBDD conexion = new CONEXIONBDD();
-            conexion.CadenaConexion = "Data Source=ISP_LAB1_PC10; Initial Catalog=SESION; Integrated Security = True";
+            conexion.CadenaConexion = "Data Source=DESKTOP-O0AP5KU\\MSSQLSERVER01; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
 
         }
 
@@ -66,17 +67,14 @@ namespace Proyecto_Final
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Recuperarinfo();
-            DataSet datosinicio;
-            datosinicio = LoginDAL.InicioSesion(Recuperarinfo());
-            if (datosinicio != null)
+
+            if (LoginDAL.InicioSesion(textBox1.Text, textBox2.Text) == 1)
             {
-                MessageBox.Show("usuario o contraseña incorrectos");
+                MessageBox.Show("El usuario ha sido encontrado");
             }
             else
             {
-                Form1 frm = new Form1();
-                frm.Show();
-                Hide();
+                MessageBox.Show("El usuario no ha sido encontrado");
             }
         }
     }

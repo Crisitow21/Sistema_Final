@@ -16,7 +16,11 @@ namespace Proyecto_Final.Resources.DAL
         {
             conexion = new CONEXIONBDD();
         }
+<<<<<<< HEAD
         static string CadenaConexion = "Data Source=ISP_LAB1_PC10; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
+=======
+        static string CadenaConexion = "Data Source=ISP_LAB1_PC11; Initial Catalog=FACTURACIONPOLLOS; Integrated Security = True";
+>>>>>>> EL MATIU ES GAY
         SqlConnection Conexion = new SqlConnection(CadenaConexion);
         public int InicioSesion(string usuario, string clave)
         {

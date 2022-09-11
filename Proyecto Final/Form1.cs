@@ -81,5 +81,26 @@ namespace Proyecto_Final
                 MessageBox.Show("El usuario no ha sido encontrado");
             }
         }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Return))
+            {
+                MessageBox.Show("El usuario ha sido encontrado");
+                Resources.PL.Menu frm = new Resources.PL.Menu();
+                frm.Show();
+                Hide();
+            }
+        }
     }
 }
